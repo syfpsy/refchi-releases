@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi Setup 0.7.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.6/Refchi-Setup-0.7.6.exe) |
-| Windows | Portable | [Refchi 0.7.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.6/Refchi-0.7.6.exe) |
+| Windows | Installer | [Refchi Setup 0.7.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.7/Refchi-Setup-0.7.7.exe) |
+| Windows | Portable | [Refchi 0.7.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.7/Refchi-0.7.7.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,17 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.7.6 — April 12, 2026 *(Latest)*
+### v0.7.7 — April 12, 2026 *(Latest)*
+System tray: minimize to tray, launch at startup, tray menu
+
+**New**
+- Minimize to system tray — app stays in tray when window is closed
+- Tray right-click menu: Open, Check for Updates, Launch at Startup, Quit
+- Launch at Startup toggle directly from tray menu
+
+---
+
+### v0.7.6 — April 12, 2026
 macOS support, new app icon, sidebar polish
 
 **New**
