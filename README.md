@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.4/Refchi-Setup-0.8.4.exe) |
-| Windows | Portable | [Refchi-0.8.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.4/Refchi-0.8.4.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.5/Refchi-Setup-0.8.5.exe) |
+| Windows | Portable | [Refchi-0.8.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.5/Refchi-0.8.5.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,25 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.4 — April 14, 2026 *(Latest)*
+### v0.8.5 — April 14, 2026 *(Latest)*
+Turkish i18n, settings panel fixes, dark mode contrast, dropdown flash fix
+
+**New**
+- Turkish translation — full UI localization via Settings → General → Interface language
+- i18n infrastructure — reusable translation script supports any language via DeepSeek API (`node scripts/translate.js <lang_code> <lang_name>`)
+- Export Library (JSON) and Import Library (JSON) buttons in Settings → Advanced are now fully functional
+- Clear Thumbnail Cache button in Settings → Advanced now calls the Electron session cache clear
+
+**Fixed**
+- Advanced panel toggles (Hardware acceleration, Lazy load thumbnails, Show debug console) now save to preferences instead of being hardcoded
+- Dark theme contrast in Appearance panel — unselected theme and tint buttons now use stronger text and background tokens
+- Light theme dropdown flash — added `color-scheme: light/dark` CSS to `.light-mode`/`.dark-mode` so native OS controls render in the correct theme without flashing
+- Drop zone now imports partial batches gracefully — if one file in a multi-file drop fails to read, the rest still import instead of aborting the whole batch
+- Smart Folders section in sidebar now shows the correct label instead of 'S-FOLDERS'
+
+---
+
+### v0.8.4 — April 14, 2026
 Text snippets, trash permanent delete, accessibility and performance improvements
 
 **New**
