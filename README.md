@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.1/Refchi-Setup-0.8.1.exe) |
-| Windows | Portable | [Refchi-0.8.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.1/Refchi-0.8.1.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.2/Refchi-Setup-0.8.2.exe) |
+| Windows | Portable | [Refchi-0.8.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.2/Refchi-0.8.2.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,18 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.1 — April 13, 2026 *(Latest)*
+### v0.8.2 — April 13, 2026 *(Latest)*
+UI hardening: selection ring, card height, toggle hitbox, about logo
+
+**Fixed**
+- Selection ring no longer clips on the right edge of cards — moved to inset box-shadow which is immune to column layout clipping
+- Portrait image thumbnails (PDFs, tall images) capped at 260px height — cards no longer grow excessively tall while images load
+- Settings toggle rows now use a single button element — eliminates the misaligned hitbox from the old label+button nesting
+- About page now shows the correct app icon instead of the placeholder layers icon
+
+---
+
+### v0.8.1 — April 13, 2026
 Bug fix: asset selection and card height
 
 **Fixed**
