@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi Setup 0.7.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.7/Refchi-Setup-0.7.7.exe) |
-| Windows | Portable | [Refchi 0.7.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.7/Refchi-0.7.7.exe) |
+| Windows | Installer | [Refchi Setup 0.7.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.8/Refchi-Setup-0.7.8.exe) |
+| Windows | Portable | [Refchi 0.7.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.8/Refchi-0.7.8.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,38 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.7.7 — April 12, 2026 *(Latest)*
+### v0.7.8 — April 13, 2026 *(Latest)*
+New logo, Agbalumo logotype, accessibility pass, performance improvements
+
+**New**
+- New Refchi logo and favicon — custom 'r' mark replaces placeholder icon
+- Agbalumo logotype in the title bar and all landing pages
+- Dark mode logo variant — title bar icon adapts correctly in dark theme
+
+**Improved**
+- macOS title bar: increased left padding so traffic light buttons never overlap the logotype
+- Asset card converted to native button — better keyboard and screen reader support
+- Sort direction is now field-aware: Name sorts A→Z by default, dates and size sort newest/largest first
+- Brand hue animation scoped to landing page only — app shell runs on a static brand color
+- Section headers and empty-state text in sidebar bumped to higher contrast token
+- Asset card dimensions and tag labels now meet WCAG AA contrast at 12px
+- Status bar filter labels no longer use opacity reduction — text is fully legible
+- ReactMarkdown is now lazy-loaded, reducing initial bundle size
+- cardTags and topLevelFolders wrapped in useMemo for render performance
+- Smart collection rules use stable keys — mid-list deletions no longer cause input glitches
+
+**Fixed**
+- SmartCollectionDialog Name label was not programmatically linked to its input (WCAG A)
+- Preview modal and Clipboard panel were missing aria-modal — screen readers now correctly trap focus
+- TagDropdown used conflicting ARIA roles (listbox + button) — corrected to menu/menuitem
+- Both sidebar and inspector aside panels now have accessible landmark names
+- Inspector tag dropdown stayed open when clicking outside — added click-outside handler
+- revealInExplorer promise in inspector was unhandled — added catch
+- Color swatches in inspector used array index as React key instead of color value
+
+---
+
+### v0.7.7 — April 12, 2026
 System tray: minimize to tray, launch at startup, tray menu
 
 **New**
