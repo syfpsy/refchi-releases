@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.0/Refchi-Setup-0.8.0.exe) |
-| Windows | Portable | [Refchi-0.8.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.0/Refchi-0.8.0.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.1/Refchi-Setup-0.8.1.exe) |
+| Windows | Portable | [Refchi-0.8.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.1/Refchi-0.8.1.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,16 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.0 — April 13, 2026 *(Latest)*
+### v0.8.1 — April 13, 2026 *(Latest)*
+Bug fix: asset selection and card height
+
+**Fixed**
+- Asset selection restored — clicking any card now correctly selects it and shows the selection ring
+- Non-visual asset cards (PDFs, 3D files, documents) no longer grow excessively tall at high grid densities
+
+---
+
+### v0.8.0 — April 13, 2026
 Accessibility hardening, bug fixes, and production polish
 
 **Improved**
