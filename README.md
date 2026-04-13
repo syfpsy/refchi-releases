@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.3/Refchi-Setup-0.8.3.exe) |
-| Windows | Portable | [Refchi-0.8.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.3/Refchi-0.8.3.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.4/Refchi-Setup-0.8.4.exe) |
+| Windows | Portable | [Refchi-0.8.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.4/Refchi-0.8.4.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,29 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.3 — April 13, 2026 *(Latest)*
+### v0.8.4 — April 14, 2026 *(Latest)*
+Text snippets, trash permanent delete, accessibility and performance improvements
+
+**New**
+- Save text snippets directly as library assets — use the text button in the sidebar or empty state, paste from clipboard or type, saved under a Text Snippets tag
+
+**Fixed**
+- Items already in trash now permanently delete when you choose Delete — previously the trash dialog appeared and did nothing
+- Context menu in the trash view now shows "Delete permanently" instead of "Move to trash"
+- Preview modal and Clipboard panel now correctly trap keyboard focus — Tab no longer leaks into background content
+- Toolbar filter, sort, and color dropdowns now have correct ARIA roles — screen readers no longer see invalid listbox/option on button elements
+- Asset filePath field typed as optional — URL assets and text snippets no longer carry a misleading required-but-empty field
+
+**Improved**
+- Asset grid re-renders dramatically reduced — selecting one card no longer triggers re-renders for all other cards
+- Drop zone now surfaces an error notification if a file import fails instead of silently doing nothing
+- Bulk action bar disables all buttons during in-progress operations to prevent double-submits
+- Notes save now flashes a brief "Saved" confirmation in the inspector
+- Memoized additional components: SidebarItem, FolderTreeItem, NotesView, AssetList, ColumnHeader
+
+---
+
+### v0.8.3 — April 13, 2026
 Fix selection ring and card footer color
 
 **Fixed**
