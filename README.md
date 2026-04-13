@@ -25,24 +25,22 @@ New logo, Agbalumo logotype, accessibility pass, performance improvements
 
 **Improved**
 - macOS title bar: increased left padding so traffic light buttons never overlap the logotype
-- Asset card converted to native button — better keyboard and screen reader support
+- Asset card is now a native button — better keyboard navigation and screen reader support
 - Sort direction is now field-aware: Name sorts A→Z by default, dates and size sort newest/largest first
-- Brand hue animation scoped to landing page only — app shell runs on a static brand color
-- Section headers and empty-state text in sidebar bumped to higher contrast token
-- Asset card dimensions and tag labels now meet WCAG AA contrast at 12px
-- Status bar filter labels no longer use opacity reduction — text is fully legible
-- ReactMarkdown is now lazy-loaded, reducing initial bundle size
-- cardTags and topLevelFolders wrapped in useMemo for render performance
-- Smart collection rules use stable keys — mid-list deletions no longer cause input glitches
+- Section headers and empty-state text in sidebar bumped to higher contrast
+- Asset card dimensions and tag labels now meet WCAG AA contrast at small sizes
+- Status bar filter labels are now fully legible at all sizes
+- Faster startup — heavy components now load on demand
+- Smoother performance when browsing large libraries
+- Smart collection rule editor no longer glitches when removing a rule mid-list
 
 **Fixed**
-- SmartCollectionDialog Name label was not programmatically linked to its input (WCAG A)
-- Preview modal and Clipboard panel were missing aria-modal — screen readers now correctly trap focus
-- TagDropdown used conflicting ARIA roles (listbox + button) — corrected to menu/menuitem
-- Both sidebar and inspector aside panels now have accessible landmark names
-- Inspector tag dropdown stayed open when clicking outside — added click-outside handler
-- revealInExplorer promise in inspector was unhandled — added catch
-- Color swatches in inspector used array index as React key instead of color value
+- Smart collection name field correctly associated with its label for screen readers
+- Preview and clipboard dialogs now correctly trap focus for screen readers
+- Tag selector now works correctly with keyboard and screen readers
+- Navigation and inspector panels now have proper accessibility landmark labels
+- Inspector tag dropdown now closes when clicking outside
+- Reveal in Explorer no longer silently fails if the path is unavailable
 
 ---
 
@@ -83,7 +81,7 @@ Canvas mode, notes with calendar, and AI semantic search
 **Improved**
 - Inspector panel sections are now collapsible
 - Screenshot editor rewritten — cleaner toolbar and tool layout
-- Various UI consistency improvements across app shell
+- Various UI consistency improvements across the app
 
 ---
 
@@ -108,89 +106,15 @@ Cross-platform builds, AI tagging, bookmarks, and design overhaul
 - AI tags now shown directly on asset cards
 - Bookmark metadata fetching with better fallbacks
 - Inspector now compact with file-type icons per asset
-- Drag-and-drop reliability improvements — multiple import strategies
+- Drag-and-drop reliability improvements
 
 **Fixed**
-- 33 accessibility, performance, and theming audit issues resolved
-- Drag-drop import now completes in a single step (no two-pass)
-- OCR race condition on concurrent import resolved
-- Navigation block when opening asset source URL fixed
-- URL download handler and inspector resize edge cases fixed
+- Accessibility, performance, and visual consistency improvements
+- Drag-and-drop import is faster and more reliable
+- Text extraction now works reliably when importing multiple files at once
+- Opening an asset's source URL no longer blocks navigation
+- Various edge cases in URL handling and panel resizing fixed
 
 **Removed**
-- Mock/placeholder tags replaced with real AI-generated tags
 - Gaussian blur effect removed from preview
-- Preview info bar removed (info lives in inspector)
-
----
-
-### v0.3.0 — April 9, 2026
-Lottie thumbnails, screenshot capture, 3D preview, and AI pipeline
-
-**New**
-- Lottie animation thumbnails — animated previews in the grid
-- Screenshot capture with live area selection on desktop
-- Native crop tool for screenshots
-- 3D model thumbnails and full interactive preview
-- AI classification + OCR pipeline (beta) — fully on-device, no API key needed
-- Pin-to-top (always-on-top) window mode
-- Title bar logotype and favorites count badge
-- Comprehensive settings panel
-
-**Improved**
-- Sidebar cleanup — cleaner section structure and nav items
-- Inspector panel made compact with file type icons
-
-**Fixed**
-- GLB preview rendering issues resolved
-- Screenshot live area selection now captures correct desktop region
-- Dark mode rendering fix for frameless window
-
----
-
-### v0.2.2 — April 9, 2026
-Drag-drop import fix and screenshot area selection
-
-**Fixed**
-- Drag-drop import now reliably saves files to library
-
-**New**
-- Screenshot area selection before capture
-
----
-
-### v0.2.1 — April 9, 2026
-Stability fixes for slider, Lottie, drag-drop, blur, and resize
-
-**Fixed**
-- Density slider value sync fixed
-- Lottie preview stability improvements
-- Drag-drop edge cases resolved
-- Background blur performance fix
-- Panel resize handle stability
-- Window reload behavior corrected
-
----
-
-### v0.2.0 — April 9, 2026
-Clipboard manager, screenshot annotation, and multi-select
-
-**New**
-- Clipboard manager — monitors and browses clipboard history
-- Screenshot capture with annotation editor (draw, crop, annotate)
-- Multi-select with bulk operations (tag, move, delete, export)
-- URL import — bookmark any web link with metadata fetch
-- Resizable panels with drag handles
-- Toast notifications and persistent status bar
-- File explorer integration (Reveal in Explorer / Finder)
-- Collapsible sidebar sections
-- Grid keyboard navigation (arrow keys, Enter, Escape)
-- Confirm-delete dialog to prevent accidental deletion
-
-**Improved**
-- Broad file type support: Lottie, Markdown, PDF, Video, Audio, Font, Archive
-- List view with sortable columns
-- Folder and tag asset counts in sidebar
-
-**Fixed**
-- 20 bugs resolved from thorough audit
+- Preview info bar removed — details now live in the inspector
