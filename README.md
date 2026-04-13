@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi Setup 0.7.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.8/Refchi-Setup-0.7.8.exe) |
-| Windows | Portable | [Refchi 0.7.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.7.8/Refchi-0.7.8.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.0/Refchi-Setup-0.8.0.exe) |
+| Windows | Portable | [Refchi-0.8.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.0/Refchi-0.8.0.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,25 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.7.8 — April 13, 2026 *(Latest)*
+### v0.8.0 — April 13, 2026 *(Latest)*
+Accessibility hardening, bug fixes, and production polish
+
+**Improved**
+- All interactive elements are now native buttons — better keyboard navigation and screen reader support across the board
+- Bookmark cards converted to native button elements with proper selection state
+- Color filter clear button now fully keyboard-accessible
+- Theme toggle on the website now announces its state to screen readers
+- Inspector color palette: 'Copy all colors' button properly labelled for assistive technology
+- Demo UI in landing page correctly marked as decorative for screen readers
+
+**Fixed**
+- Update checker no longer accumulates stale timeouts — checking for updates multiple times in a row no longer causes delayed UI glitches
+- App version now sourced directly from package.json — version in settings, landing page, and release notes always stay in sync
+- Sidebar empty states (no folders, no smart folders, no tags) now render consistently with the shared empty-state component
+
+---
+
+### v0.7.8 — April 13, 2026
 New logo, Agbalumo logotype, accessibility pass, performance improvements
 
 **New**
@@ -82,39 +100,3 @@ Canvas mode, notes with calendar, and AI semantic search
 - Inspector panel sections are now collapsible
 - Screenshot editor rewritten — cleaner toolbar and tool layout
 - Various UI consistency improvements across the app
-
----
-
-### v0.4.0 — April 9, 2026
-Cross-platform builds, AI tagging, bookmarks, and design overhaul
-
-**New**
-- Cross-platform builds — Windows installer + portable, macOS, and Linux packages
-- Auto-updates — app checks for and installs new versions automatically
-- Color palette extraction from images with palette filter in grid toolbar
-- Smart collections with rule-based filters (type, tag, date, color)
-- Rich bookmark cards — OG image, favicon, title, description, domain pill
-- Video, audio, and GIF native preview support
-- AI auto-tagging — on-device classification with confidence scores
-- OCR text extraction from images and screenshots on import
-- Browser image drag-and-drop — drag directly from web pages
-- Clipboard link save — save URLs directly from clipboard panel
-
-**Improved**
-- Design overhaul — masonry grid, compact cards, clean chrome
-- Light mode polish — all surfaces, bookmarks, inspector, and animations
-- AI tags now shown directly on asset cards
-- Bookmark metadata fetching with better fallbacks
-- Inspector now compact with file-type icons per asset
-- Drag-and-drop reliability improvements
-
-**Fixed**
-- Accessibility, performance, and visual consistency improvements
-- Drag-and-drop import is faster and more reliable
-- Text extraction now works reliably when importing multiple files at once
-- Opening an asset's source URL no longer blocks navigation
-- Various edge cases in URL handling and panel resizing fixed
-
-**Removed**
-- Gaussian blur effect removed from preview
-- Preview info bar removed — details now live in the inspector
