@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.2/Refchi-Setup-0.8.2.exe) |
-| Windows | Portable | [Refchi-0.8.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.2/Refchi-0.8.2.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.3/Refchi-Setup-0.8.3.exe) |
+| Windows | Portable | [Refchi-0.8.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.3/Refchi-0.8.3.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,16 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.2 — April 13, 2026 *(Latest)*
+### v0.8.3 — April 13, 2026 *(Latest)*
+Fix selection ring and card footer color
+
+**Fixed**
+- Selection ring now renders correctly on all four sides — restored z-20 absolute ring div; inset box-shadow was being buried under card content
+- Card footer is now visibly lighter than the canvas background in both light and dark modes
+
+---
+
+### v0.8.2 — April 13, 2026
 UI hardening: selection ring, card height, toggle hitbox, about logo
 
 **Fixed**
