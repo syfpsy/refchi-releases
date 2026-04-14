@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.5/Refchi-Setup-0.8.5.exe) |
-| Windows | Portable | [Refchi-0.8.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.5/Refchi-0.8.5.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.6/Refchi-Setup-0.8.6.exe) |
+| Windows | Portable | [Refchi-0.8.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.6/Refchi-0.8.6.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,31 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.5 — April 14, 2026 *(Latest)*
+### v0.8.6 — April 14, 2026 *(Latest)*
+UI quality pass — performance, accessibility, and full i18n coverage
+
+**Improved**
+- Notes panel collapse animation now uses width transition instead of grid-template-columns — no more layout thrashing
+- All color swatch hover states replaced with ring/opacity feedback — no more hitbox mismatch from CSS transforms
+- Bookmark fallback card replaced gradient with neutral background and Globe icon
+- Preview modal color chips enlarged and use opacity hover instead of scale-150
+- Model thumbnail placeholder now uses flat background instead of gradient
+- Toast slide-in animation respects prefers-reduced-motion
+- Notes panel collapse animation respects prefers-reduced-motion
+- Density +/- buttons now show cursor-not-allowed when disabled
+
+**Fixed**
+- Inspector preview images now load lazily — no unnecessary network/disk reads when scrolling
+- Status bar refreshing dots use correct fg-tertiary token instead of bg-current
+- i18n default context now resolves against bundled English — translation keys never leak as raw strings outside a provider
+
+**New**
+- Full i18n coverage: toolbar type/sort labels, status bar, grid toolbar, import modal, toast messages, and inspector all use translation keys
+- Turkish translations updated with all new keys
+
+---
+
+### v0.8.5 — April 14, 2026
 Turkish i18n, settings panel fixes, dark mode contrast, dropdown flash fix
 
 **New**
