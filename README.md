@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.9.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.9/Refchi-Setup-0.8.9.exe) |
-| Windows | Portable | [Refchi-0.8.9.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.9/Refchi-0.8.9.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.10.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.10/Refchi-Setup-0.8.10.exe) |
+| Windows | Portable | [Refchi-0.8.10.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.10/Refchi-0.8.10.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,15 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.9 — April 14, 2026 *(Latest)*
+### v0.8.10 — April 14, 2026 *(Latest)*
+Hotfix: restore image, PDF, audio, and video preview
+
+**Fixed**
+- Images, PDFs, audio, and video files no longer show a blank preview — the local-file:// protocol handler was broken by a scheme registration flag added in 0.8.9 that mangled Windows paths during URL normalization
+
+---
+
+### v0.8.9 — April 14, 2026
 Preview fixes, embedded URL view, and sidebar rename bug fix
 
 **New**
