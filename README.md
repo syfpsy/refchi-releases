@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.6/Refchi-Setup-0.8.6.exe) |
-| Windows | Portable | [Refchi-0.8.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.6/Refchi-0.8.6.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.7/Refchi-Setup-0.8.7.exe) |
+| Windows | Portable | [Refchi-0.8.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.7/Refchi-0.8.7.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,25 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.6 — April 14, 2026 *(Latest)*
+### v0.8.7 — April 14, 2026 *(Latest)*
+OCR and semantic search wired, AI hint banners, preview fixes, leaner exe
+
+**New**
+- OCR text extraction is now manually triggerable from the inspector — click 'Extract text' on any image to run on-device OCR via Tesseract.js
+- Semantic search is now active — type a phrase in the search bar and AI ranks results by meaning, not just filename
+- First-run AI hint banners explain semantic search and OCR once, then dismiss permanently
+- SVG files now preview correctly in the preview modal on Windows (MIME type was misreported by the OS)
+- TXT files now show a loading spinner while reading, then render the full text content
+- Non-Lottie JSON files now display as raw text instead of showing a generic file icon
+
+**Improved**
+- Image preview in preview modal no longer overlaps the color palette row — max height capped to 80vh
+- Inspector 'Extracted text' section increased to 4 lines of preview
+- Exe size reduced ~10–35MB by excluding source maps, TypeScript type declarations, and unused @xenova/transformers source files from the build
+
+---
+
+### v0.8.6 — April 14, 2026
 UI quality pass — performance, accessibility, and full i18n coverage
 
 **Improved**
