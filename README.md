@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.10.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.10/Refchi-Setup-0.8.10.exe) |
-| Windows | Portable | [Refchi-0.8.10.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.10/Refchi-0.8.10.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.11.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.11/Refchi-Setup-0.8.11.exe) |
+| Windows | Portable | [Refchi-0.8.11.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.11/Refchi-0.8.11.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,16 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.10 — April 14, 2026 *(Latest)*
+### v0.8.11 — April 14, 2026 *(Latest)*
+SVG preview: inline rendering for full fidelity across all SVG types
+
+**Fixed**
+- SVG files now render inline in the preview modal instead of as data URIs — eliminates blank previews caused by btoa encoding edge cases and works reliably for all SVG content including complex filters and gradients
+- SVG preview now works even when filePath is not set — falls back to deriving the path from previewUrl
+
+---
+
+### v0.8.10 — April 14, 2026
 Hotfix: restore image, PDF, audio, and video preview
 
 **Fixed**
