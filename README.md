@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.7/Refchi-Setup-0.8.7.exe) |
-| Windows | Portable | [Refchi-0.8.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.7/Refchi-0.8.7.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.8/Refchi-Setup-0.8.8.exe) |
+| Windows | Portable | [Refchi-0.8.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.8/Refchi-0.8.8.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,24 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.7 — April 14, 2026 *(Latest)*
+### v0.8.8 — April 14, 2026 *(Latest)*
+i18n pass, accessibility hardening, reduced-motion support
+
+**Improved**
+- Inspector panel is now fully translated — all labels, buttons, and status strings respect the active language
+- Added 16 missing locale keys for AI Analysis, OCR controls, and preview actions (English and Turkish)
+- Spinners now respect the system's Reduce motion preference and stop animating when it is enabled
+- All icon-only buttons in the title bar, inspector, bulk action bar, and sidebar context menu now have proper accessible labels
+- Sidebar context menu (Rename / Delete) uses translated strings instead of hardcoded English
+- Bulk action bar tag dropdown exposes correct ARIA roles (menu / menuitem) and expanded state
+- Electron drag region moved from inline style objects to reusable CSS utility classes
+
+**Fixed**
+- mainWindow initialized to null instead of undefined
+
+---
+
+### v0.8.7 — April 14, 2026
 OCR and semantic search wired, AI hint banners, preview fixes, leaner exe
 
 **New**
