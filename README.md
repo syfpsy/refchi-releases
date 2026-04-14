@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.11.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.11/Refchi-Setup-0.8.11.exe) |
-| Windows | Portable | [Refchi-0.8.11.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.11/Refchi-0.8.11.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.12.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.12/Refchi-Setup-0.8.12.exe) |
+| Windows | Portable | [Refchi-0.8.12.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.12/Refchi-0.8.12.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,18 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.11 — April 14, 2026 *(Latest)*
+### v0.8.12 — April 14, 2026 *(Latest)*
+Protocol hardening and dead-code cleanup
+
+**Fixed**
+- Local file protocol handler now strips query strings and fragments before decoding paths — prevents edge-case 404s on URLs with unexpected suffixes
+
+**Improved**
+- Removed unreachable GIF branch in preview modal — GIF files are already handled by the image renderer
+
+---
+
+### v0.8.11 — April 14, 2026
 SVG preview: inline rendering for full fidelity across all SVG types
 
 **Fixed**
