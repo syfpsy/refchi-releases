@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.8/Refchi-Setup-0.8.8.exe) |
-| Windows | Portable | [Refchi-0.8.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.8/Refchi-0.8.8.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.9.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.9/Refchi-Setup-0.8.9.exe) |
+| Windows | Portable | [Refchi-0.8.9.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.9/Refchi-0.8.9.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,20 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.8 — April 14, 2026 *(Latest)*
+### v0.8.9 — April 14, 2026 *(Latest)*
+Preview fixes, embedded URL view, and sidebar rename bug fix
+
+**New**
+- URL assets now open in an embedded browser view inside the preview modal — a toolbar shows the URL with options to go back to the card view or open in the system browser
+
+**Fixed**
+- SVG files now preview reliably via data URI — bypasses local-file protocol issues on Windows
+- Screenshot editor no longer shows a blank canvas when the image fails to load — it now dismisses cleanly
+- Inline rename in the sidebar no longer double-saves when pressing Enter — the blur event is now correctly suppressed
+
+---
+
+### v0.8.8 — April 14, 2026
 i18n pass, accessibility hardening, reduced-motion support
 
 **Improved**
