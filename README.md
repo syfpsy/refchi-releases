@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.13.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.13/Refchi-Setup-0.8.13.exe) |
-| Windows | Portable | [Refchi-0.8.13.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.13/Refchi-0.8.13.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.14.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.14/Refchi-Setup-0.8.14.exe) |
+| Windows | Portable | [Refchi-0.8.14.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.14/Refchi-0.8.14.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,31 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.13 — April 16, 2026 *(Latest)*
+### v0.8.14 — April 16, 2026 *(Latest)*
+Semantic search + OCR fixed in packaged builds, font preview, code file preview, robust error handling
+
+**Fixed**
+- Semantic search now actually works in packaged builds — the installer was excluding the @xenova/transformers ESM entrypoint so the model never loaded; exclusion rules corrected
+- OCR now works in packaged builds — tesseract.js is unpacked from the asar archive, worker and core paths are set explicitly so the engine loads on first run
+- AI engines now surface real errors instead of failing silently — users see "Semantic search unavailable — using text search" toasts and specific OCR reasons ("No text found", "OCR engine unavailable", etc.)
+- Link-mode assets whose source file was moved or deleted now show a clear "File is missing" message in the preview modal instead of a blank area
+- Video and audio files that the built-in Chromium player can't decode now show an "Open in default app" fallback instead of a broken player
+
+**New**
+- Font files (.ttf, .otf, .woff, .woff2) now preview with a full glyph sample — "Ag" at 72pt, the pangram at 40pt, full character set, and sample paragraphs — all rendered in the actual font via the FontFace API
+- Source code and config files preview as syntax-friendly text — .ts, .tsx, .js, .py, .rs, .go, .sh, .sql, .html, .css, .env, .dockerfile, and 30+ more extensions now show their contents inline instead of a generic icon
+- Archive files (.zip, .rar, .7z, etc.) show a clear "Reveal in explorer" action so users can extract with their native tool of choice
+- Text snippet assets (clipboard-imported text) now preview their stored content directly in the modal
+
+**Improved**
+- Semantic search results are now persisted across sessions — embeddings are cached to disk keyed by content hash, so subsequent searches return instantly instead of re-embedding the whole library on every launch
+- Lowered semantic search score threshold from 0.25 to 0.15 so filename-only matches still rank
+- File reads through IPC are now guarded with a 25 MB cap — a 500 MB log file or oversized SVG no longer freezes the window; oversized text files show a truncated preview with a clear notice
+- OCR backfill aborts early if the engine itself fails to load, preventing 100 consecutive failed reads
+
+---
+
+### v0.8.13 — April 16, 2026
 OBJ model preview, image preview resilience, media load fallbacks
 
 **New**
