@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.12.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.12/Refchi-Setup-0.8.12.exe) |
-| Windows | Portable | [Refchi-0.8.12.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.12/Refchi-0.8.12.exe) |
+| Windows | Installer | [Refchi-Setup-0.8.13.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.13/Refchi-Setup-0.8.13.exe) |
+| Windows | Portable | [Refchi-0.8.13.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.13/Refchi-0.8.13.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,20 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.12 — April 14, 2026 *(Latest)*
+### v0.8.13 — April 16, 2026 *(Latest)*
+OBJ model preview, image preview resilience, media load fallbacks
+
+**New**
+- Wavefront .obj 3D models now preview with a full Three.js viewer — orbit controls, auto-centering, and a default material for untextured meshes
+- .obj grid thumbnails render a live auto-rotating 3D preview instead of a generic 3D badge
+
+**Fixed**
+- Images that fail to load through the local-file:// protocol now fall back to an IPC blob URL — rescues PNG/JPG/WebP files that the custom protocol couldn't stream due to path encoding or MIME edge cases
+- Failed image previews now show a clear "Could not load image" message instead of a blank area
+
+---
+
+### v0.8.12 — April 14, 2026
 Protocol hardening and dead-code cleanup
 
 **Fixed**
