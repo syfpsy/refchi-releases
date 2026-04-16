@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.8.14.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.14/Refchi-Setup-0.8.14.exe) |
-| Windows | Portable | [Refchi-0.8.14.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.8.14/Refchi-0.8.14.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.0/Refchi-Setup-0.9.0.exe) |
+| Windows | Portable | [Refchi-0.9.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.0/Refchi-0.9.0.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,30 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.8.14 — April 16, 2026 *(Latest)*
+### v0.9.0 — April 16, 2026 *(Latest)*
+Stability & cleanup: file logger, diagnostics panel, structured IPC errors, shared utilities
+
+**New**
+- Persistent log file at `userData/logs/refchi.log` — every update check, AI engine status change, and unexpected error is recorded with timestamps; auto-rotates at 1 MB
+- About panel now shows the library path and log file path with Reveal / Open buttons so support questions take one click instead of a scavenger hunt
+- About panel footer shows platform, architecture, Electron and Node versions for bug reports
+
+**Improved**
+- Auto-updater now writes every step to the log file — download progress, available versions, errors — so "update didn't work" can be diagnosed after the fact
+- Auto-updater fallback timer now flips to a clear "No response from update server" error instead of silently claiming you're up to date when the server is unreachable
+- Auto-updater UI cancels its 12-second fallback as soon as a real status event arrives, so late responses can't flip a downloaded-and-ready state back to an error
+- Saving library changes now surfaces the real reason if the disk is full or permissions are denied
+- Dropping an image URL that fails to download now tells you why (404, non-image content type, network blocked) instead of silently doing nothing
+- URL metadata fetcher now returns a fetchFailed flag + reason when bookmark enrichment fails so the UI can distinguish "site has no metadata" from "fetch blocked"
+- Embedding cache is now flushed on before-quit as well as window-all-closed, so forced OS shutdowns don't lose search history
+
+**Fixed**
+- Consolidated four inline copies of the local-file:// URL decoder (preview modal, image fallback, SVG fallback, text fallback) into a single shared helper — previously a bug fix in one site diverged from the others
+- Consolidated three duplicate copies of VISUAL_TYPES / IMAGE_MIME_BY_EXT / MARKDOWN_EXTENSIONS — new file types now only need to be added in one place
+
+---
+
+### v0.8.14 — April 16, 2026
 Semantic search + OCR fixed in packaged builds, font preview, code file preview, robust error handling
 
 **Fixed**
