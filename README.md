@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.0/Refchi-Setup-0.9.0.exe) |
-| Windows | Portable | [Refchi-0.9.0.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.0/Refchi-0.9.0.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.1/Refchi-Setup-0.9.1.exe) |
+| Windows | Portable | [Refchi-0.9.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.1/Refchi-0.9.1.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,16 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.0 — April 16, 2026 *(Latest)*
+### v0.9.1 — April 16, 2026 *(Latest)*
+Hotfix: startup crash (missing transitive deps) and bulletproof packaging
+
+**Fixed**
+- Startup crash "Cannot find module regenerator-runtime/runtime" — tesseract.js's hoisted transitive deps were trapped inside app.asar while tesseract.js itself lived in app.asar.unpacked, so Node's require walk couldn't find them
+- Generated the full transitive dependency closure of tesseract.js and @xenova/transformers and unpacked all 43 runtime deps (regenerator-runtime, node-fetch, bmp-js, @huggingface/jinja, color, semver, streamx, tar-fs, and more) so any require from the unpacked AI packages now resolves
+
+---
+
+### v0.9.0 — April 16, 2026
 Stability & cleanup: file logger, diagnostics panel, structured IPC errors, shared utilities
 
 **New**
