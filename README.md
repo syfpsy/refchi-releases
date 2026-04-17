@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.1/Refchi-Setup-0.9.1.exe) |
-| Windows | Portable | [Refchi-0.9.1.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.1/Refchi-0.9.1.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.2/Refchi-Setup-0.9.2.exe) |
+| Windows | Portable | [Refchi-0.9.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.2/Refchi-0.9.2.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,24 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.1 — April 16, 2026 *(Latest)*
+### v0.9.2 — April 17, 2026 *(Latest)*
+Semantic search + OCR + screenshot editor unblocked
+
+**Fixed**
+- Screenshot editor's header buttons, color swatches, and tool buttons (blur, draw, arrow, rect, text) were unclickable on Windows — the frameless title bar's `-webkit-app-region: drag` was bleeding through the editor overlay, so clicks went to the OS window-drag instead of the buttons. Added `app-no-drag-region` to the editor root
+- Semantic search silently showed an empty grid when the model returned zero matches above threshold — now falls back to text search so users always see something relevant
+- OCR now works offline on first run — bundled English language data (2.9 MB) as extra resources and set Tesseract's `langPath` to the local copy. Previously first-run OCR silently fetched from cdn.jsdelivr.net and failed on any firewall / offline network
+- OCR button now appears for all image extensions Tesseract can decode (jpg/jpeg/png/bmp/tiff/webp/gif/pbm/pgm/ppm/pnm), not just assets whose library type happens to be "image" or "gif"
+
+**Improved**
+- Semantic search now triggers on any 3+ character query instead of requiring 2 words — single-word queries like "logo" or "minimalist" now go through the model
+- Semantic score threshold lowered from 0.15 to 0.08 so legitimate matches from short-corpus assets still rank
+- Search bar now shows a "Searching…" spinner pill while the model loads or embeddings are in flight — first-run model download (~22 MB from Hugging Face) no longer looks like the app is hanging
+- Renderer now subscribes to AI engine status changes from the main process and surfaces load failures as toasts — if the semantic model or OCR engine fails to initialize, you see it immediately instead of silently getting empty results
+
+---
+
+### v0.9.1 — April 16, 2026
 Hotfix: startup crash (missing transitive deps) and bulletproof packaging
 
 **Fixed**
