@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.3/Refchi-Setup-0.9.3.exe) |
-| Windows | Portable | [Refchi-0.9.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.3/Refchi-0.9.3.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.4/Refchi-Setup-0.9.4.exe) |
+| Windows | Portable | [Refchi-0.9.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.4/Refchi-0.9.4.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,16 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.3 — April 17, 2026 *(Latest)*
+### v0.9.4 — April 17, 2026 *(Latest)*
+Semantic search confidence gate
+
+**Improved**
+- Semantic search is now gated by both an absolute score floor (0.22, up from 0.12) and a relative filter that requires each result to score at least 70% of the top match — so when the model finds something obviously strong you get that match plus close neighbors, and when it finds nothing confident you fall through to text search instead of seeing a long tail of weakly-related items
+- Weak queries that would previously surface 30+ loosely-similar results now correctly fall back to text search, because their top score is already below the absolute floor
+
+---
+
+### v0.9.3 — April 17, 2026
 Balanced semantic search, color palette backfill, centered preview palette, clear-search button
 
 **Improved**
