@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.4/Refchi-Setup-0.9.4.exe) |
-| Windows | Portable | [Refchi-0.9.4.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.4/Refchi-0.9.4.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.5/Refchi-Setup-0.9.5.exe) |
+| Windows | Portable | [Refchi-0.9.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.5/Refchi-0.9.5.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,24 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.4 — April 17, 2026 *(Latest)*
+### v0.9.5 — April 17, 2026 *(Latest)*
+CLIP content tagging, fixed sidebar, sidebar toggle
+
+**New**
+- Images are now tagged by their actual content using CLIP zero-shot classification — searches like "person", "man", "landscape", "dog", "food" now find matching images even when the filename has no such word. Previously the classifier was pure geometry (aspect ratio, colors, edges) and could only match "photo", "portrait", "landscape" (the orientation).
+- ~55 content labels across people, places, animals, objects, design & digital, art & illustration, text — tags appear as asset.contentTags and feed into the semantic search corpus automatically
+- Sidebar gained a collapse/expand toggle button on its right edge — click the chevron to slide the sidebar in or out. Preference persists across app restarts.
+
+**Improved**
+- Sidebar is now fixed at 224 px wide — no longer user-resizable. The app's typography and spacing is tuned for this width; drag-resize meant labels would overflow or space would be wasted depending on where you stopped.
+- Turkish "Import" button now reads "Ekle" instead of the overly-literal "İçe Aktar"
+
+**Fixed**
+- CLIP model (~90 MB, Xenova/clip-vit-base-patch32) downloads once on first run and is cached under userData/models. Subsequent runs are instant. Content tagging runs in the background after all other startup tasks so the app stays responsive.
+
+---
+
+### v0.9.4 — April 17, 2026
 Semantic search confidence gate
 
 **Improved**
