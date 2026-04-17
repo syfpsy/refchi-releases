@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.2/Refchi-Setup-0.9.2.exe) |
-| Windows | Portable | [Refchi-0.9.2.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.2/Refchi-0.9.2.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.3/Refchi-Setup-0.9.3.exe) |
+| Windows | Portable | [Refchi-0.9.3.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.3/Refchi-0.9.3.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,22 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.2 — April 17, 2026 *(Latest)*
+### v0.9.3 — April 17, 2026 *(Latest)*
+Balanced semantic search, color palette backfill, centered preview palette, clear-search button
+
+**Improved**
+- Semantic search threshold tuned to 0.12 — the middle ground between v0.9.2's 0.08 (too loose, noisy long tail) and v0.9.0's 0.15 (too strict, missed filename-only matches)
+- Preview modal's color palette is now centered under the image, not right-aligned — visually anchored to the preview
+- Preview modal's title, dimensions, size, and asset counter render white with a drop-shadow over the blurred backdrop, instead of muted tokens that disappeared against the glass
+- Search bar gained a clear (×) button that appears as soon as you type — the searching/semantic pill tucks to its left so both stay visible during search
+
+**Fixed**
+- Images drag-and-dropped from the web now get color palettes — nativeImage occasionally returned empty on just-written files (kernel write-buffer race on Windows); added a readFileSync → createFromBuffer fallback that rescues those cases
+- Added a color-palette backfill pass on startup that re-extracts palettes for any image asset with empty colors, catches historical imports and web-drop edge cases the initial extraction missed
+
+---
+
+### v0.9.2 — April 17, 2026
 Semantic search + OCR + screenshot editor unblocked
 
 **Fixed**
