@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.7/Refchi-Setup-0.9.7.exe) |
-| Windows | Portable | [Refchi-0.9.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.7/Refchi-0.9.7.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.8/Refchi-Setup-0.9.8.exe) |
+| Windows | Portable | [Refchi-0.9.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.8/Refchi-0.9.8.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,27 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.7 — April 17, 2026 *(Latest)*
+### v0.9.8 — April 17, 2026 *(Latest)*
+Design audit cleanup: unified logotype, less glass, less shadow, wrapping toolbar, bigger hit targets, IconButton primitive
+
+**Fixed**
+- Logotype font was inconsistent — title bar used Agbalumo, loading screen used Fraunces. Now Agbalumo everywhere.
+- Grid toolbar overflowed at 900px minimum window width. Added flex-wrap.
+- Type filter's close (×) button was a 14px hit target (WCAG 2.5.5 AA requires 24×24). Increased padding.
+- Color palette swatches were 20×20 px. Increased to 28×28.
+- Favicon load error was mutating DOM directly in onError — now tracked via state.
+- Preview modal bottom bar could overflow on long category labels. Added min-w-0 + truncate.
+
+**Improved**
+- Removed 8 decorative drop-shadows from file icons (no information value).
+- Removed 4 backdrop-blur uses that violated the "no glass" principle. Preview modal's full-screen scrim stays.
+- Removed shadow-xl on the clipboard panel — panels should feel "anchored, not floaty".
+- Asset and bookmark cards use ring-1 ring-inset for their 1px outline instead of a hacky box-shadow.
+- New IconButton primitive with three variants (chrome / action / inline) and three sizes.
+
+---
+
+### v0.9.7 — April 17, 2026
 Data-integrity hardening + a11y/perf polish
 
 **Fixed**
