@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.8/Refchi-Setup-0.9.8.exe) |
-| Windows | Portable | [Refchi-0.9.8.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.8/Refchi-0.9.8.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.9.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.9/Refchi-Setup-0.9.9.exe) |
+| Windows | Portable | [Refchi-0.9.9.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.9/Refchi-0.9.9.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,24 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.8 — April 17, 2026 *(Latest)*
+### v0.9.9 — April 17, 2026 *(Latest)*
+CLIP accuracy, blur marquee preview, Ctrl+C copy, clipboard text import, no surprise browser opens
+
+**Fixed**
+- Double-clicking a bookmark card no longer opens the URL in your system browser — it opens the preview modal.
+- CLIP content tagging accuracy: woman images no longer get tagged "dog". Threshold 0.05 → 0.15 + 40% relative floor.
+- Labels now expand to multiple tags: "a photo of a dog" emits ["dog", "animal"].
+- Content-tags schema version bumped to v2; existing v0.9.5-tagged assets get re-classified automatically.
+
+**New**
+- Screenshot editor's blur / rectangle / arrow tools show a live dashed marquee while dragging.
+- Ctrl/Cmd+C copies selected assets to the OS clipboard.
+- Right-click menu on any asset has a "Copy" option.
+- Clipboard history's text entries have an Import (+) button.
+
+---
+
+### v0.9.8 — April 17, 2026
 Design audit cleanup: unified logotype, less glass, less shadow, wrapping toolbar, bigger hit targets, IconButton primitive
 
 **Fixed**
