@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.6/Refchi-Setup-0.9.6.exe) |
-| Windows | Portable | [Refchi-0.9.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.6/Refchi-0.9.6.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.7/Refchi-Setup-0.9.7.exe) |
+| Windows | Portable | [Refchi-0.9.7.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.7/Refchi-0.9.7.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,28 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.6 — April 17, 2026 *(Latest)*
+### v0.9.7 — April 17, 2026 *(Latest)*
+Data-integrity hardening + a11y/perf polish
+
+**Fixed**
+- Data loss on long OCR backfills — used to load the library once at backfill start, run OCR on every untagged image (potentially hours), then save the stale snapshot at the end. Any edits during the window (deletions, tag changes, folder moves, notes) were silently reverted. Now re-reads the library before each asset, saves in batches of 4 through a single mutation lock.
+- Double-launch corruption — if you double-clicked the shortcut or ran dev + packaged side-by-side, both processes would race on library.json and overwrite each other. Added a single-instance lock at app boot.
+- Color palette backfill same clobber pattern as OCR — now uses the same mutex.
+- Content-tags backfill could run twice concurrently. Added a guard.
+- bridge.aiOcr IPC rejections were uncaught in the renderer — wrapped in try/catch with a user-facing toast.
+- Sidebar used aria-hidden when collapsed (ARIA spec forbids for ancestors of focusable content). Switched to inert.
+- Empty grid distinguishes "no assets yet" from "no results for your search" — typing a query that matches nothing shows the query + Clear button.
+- Font preview glyphs no longer read aloud by screen readers (visual-only purpose). Whole sample labeled "Font sample for <filename>".
+- FontFace cleanup removes the exact instance rather than searching by family.
+- CLIP content-tagging engine errors now surface as toasts.
+
+**Improved**
+- Text search tag matching was O(assets × tags × tags). Precomputed a tagId→name map; now O(assets × tags).
+- Semantic search corpus building had the same pattern.
+
+---
+
+### v0.9.6 — April 17, 2026
 Sidebar quick-capture row, title-bar panel toggles, S-Folders rename
 
 **Improved**
