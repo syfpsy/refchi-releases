@@ -6,8 +6,8 @@ This repository hosts releases for the [Refchi](https://refchi.com) desktop app 
 
 | Platform | Type | Download |
 |----------|------|----------|
-| Windows | Installer | [Refchi-Setup-0.9.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.5/Refchi-Setup-0.9.5.exe) |
-| Windows | Portable | [Refchi-0.9.5.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.5/Refchi-0.9.5.exe) |
+| Windows | Installer | [Refchi-Setup-0.9.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.6/Refchi-Setup-0.9.6.exe) |
+| Windows | Portable | [Refchi-0.9.6.exe](https://github.com/syfpsy/refchi-releases/releases/download/v0.9.6/Refchi-0.9.6.exe) |
 
 Full release history: [refchi.com/landing/releases](https://refchi.com/landing/releases)
 
@@ -15,7 +15,17 @@ Full release history: [refchi.com/landing/releases](https://refchi.com/landing/r
 
 ## Release Notes
 
-### v0.9.5 — April 17, 2026 *(Latest)*
+### v0.9.6 — April 17, 2026 *(Latest)*
+Sidebar quick-capture row, title-bar panel toggles, S-Folders rename
+
+**Improved**
+- The three quick-capture buttons (text snippet, clipboard, screenshot) moved from a cramped row next to Import to a dedicated 3-column row beneath it — each is now full-width within its cell, framed, and visually a peer of Import rather than a satellite
+- Sidebar and inspector toggle buttons are now Notion/Claude-style icon buttons in the title bar (LayoutLeft / LayoutRight) — replaces the long thin edge bars that used to sit between panels, which were undiscoverable and visually noisy
+- Smart Folders renamed to S-Folders throughout the UI — cleaner in the sidebar and matches the app's compact section-header convention
+
+---
+
+### v0.9.5 — April 17, 2026
 CLIP content tagging, fixed sidebar, sidebar toggle
 
 **New**
