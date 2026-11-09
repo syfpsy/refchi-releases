@@ -12,10 +12,10 @@ Collect images, fonts, colors, bookmarks, and references in one place. Browse fa
 
 | Platform | Status | Link |
 |----------|--------|------|
-| **Windows** (10/11 x64) | ✅ Available | [**Download the latest installer →**](https://github.com/syfpsy/refchi-releases/releases/latest) |
-| macOS | 🔜 In progress | — |
+| **Windows** (10/11 x64) | ✅ Available | [**Download Refchi-Setup-0.12.0.exe →**](https://github.com/syfpsy/refchi-releases/releases/download/v0.12.0/Refchi-Setup-0.12.0.exe) |
+| **macOS** (Apple Silicon) | ✅ Available | [**Download Refchi-0.12.0-arm64.dmg →**](https://github.com/syfpsy/refchi-releases/releases/download/v0.12.0/Refchi-0.12.0-arm64.dmg) |
 
-On the release page, grab `Refchi-Setup-<version>.exe` (installer) or `Refchi-<version>.exe` (portable, no install).
+On the release page, grab `Refchi-Setup-<version>.exe` (Windows installer), `Refchi-<version>.exe` (Windows portable), or `Refchi-<version>-arm64.dmg` (macOS Apple Silicon).
 
 All releases: [github.com/syfpsy/refchi-releases/releases](https://github.com/syfpsy/refchi-releases/releases)
 
@@ -26,6 +26,7 @@ The full, always-current changelog lives at **[refchi.com/landing/releases](http
 ## System Requirements
 
 - **Windows:** Windows 10 or 11 (x64)
+- **macOS:** macOS 12+ (Apple Silicon / arm64)
 - **Storage:** ~200 MB for the app; library size depends on your assets
 
 ## About this repo
